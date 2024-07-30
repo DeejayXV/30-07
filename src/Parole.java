@@ -9,24 +9,19 @@ public class Parole {
         Set<String> duplicates = new HashSet<>();
 
         try {
-            // Chiedi all'utente di inserire il numero di parole
             System.out.print("Inserisci il numero di parole: ");
             int n = scanner.nextInt();
-            scanner.nextLine();  // Consuma il newline dopo l'intero
+            scanner.nextLine();
 
-            // Imposta un breakpoint qui per iniziare il debug
             System.out.println("Inserisci " + n + " parole:");
 
-            // Chiedi all'utente di inserire le parole
             for (int i = 0; i < n; i++) {
                 String word = scanner.nextLine();
-                // Imposta un breakpoint qui per vedere il valore di "word"
                 if (!words.add(word)) {
                     duplicates.add(word);
                 }
             }
 
-            // Stampa le parole duplicate
             System.out.println("Parole duplicate:");
             if (duplicates.isEmpty()) {
                 System.out.println("Nessuna parola duplicata.");
@@ -36,17 +31,15 @@ public class Parole {
                 }
             }
 
-            // Stampa il numero di parole distinte
             System.out.println("Numero di parole distinte: " + words.size());
 
-            // Stampa l'elenco delle parole distinte
-            System.out.println("Elenco delle parole distinte:");
+
+            System.out.println("Lista delle parole distinte:");
             for (String word : words) {
-                // Imposta un breakpoint qui per vedere l'output di ogni parola distinta
                 System.out.println(word);
             }
         } catch (Exception e) {
-            System.out.println("Si è verificato un errore: " + e.getMessage());
+            System.out.println("Errore: " + e.getMessage());
         } finally {
             scanner.close();
         }
